@@ -1,0 +1,40 @@
+esphome:
+  name: m5camera
+  platform: ESP32
+  board: m5stack-core-esp32
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: ""
+
+ota:
+  password: ""
+
+binary_sensor:
+  - platform: status
+    name: "EspCamera Status"
+
+esp32_camera:
+  name: M5CAMERA
+  external_clock:
+    pin: GPIO27
+    frequency: 20MHz
+  i2c_pins:
+    sda: GPIO22
+    scl: GPIO23
+  data_pins: [GPIO32, GPIO35, GPIO34, GPIO5, GPIO39, GPIO18, GPIO36, GPIO19]
+  vsync_pin: GPIO25
+  href_pin: GPIO26
+  pixel_clock_pin: GPIO21
+  reset_pin: GPIO15
+  idle_framerate: 0.05 fps
+  resolution: 640x480
+  jpeg_quality: 10
