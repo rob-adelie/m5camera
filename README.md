@@ -1,3 +1,5 @@
+# M5CAMERA setup for HomeAssistant and EspHome
+
 This is my setup for the m5camera (m5stick) that I bought off ebay. None of the initial yaml worked until I found the specs for the device. Changed the default yaml from[ The esp32 Camera component ](https://esphome.io/components/esp32_camera.html)and now it's working. Hopefully helps someone. 
 [Here are the docs
 ](https://docs.m5stack.com/en/unit/m5camera_x)
